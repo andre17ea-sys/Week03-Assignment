@@ -13,24 +13,32 @@ body {
   margin: 30px auto;
   height: 250px;
   cursor: pointer;
-  animation: pulse 2s infinite; /*de rulat mereu pulse*/
+  animation: rotate 4s linear infinite; /*de rotesc mereu si setez mai jos sa Pulse doar la click*/
+  transition: transform 0.3s ease;
 }
 
 #cookie:hover {
-  transform: scale(1.1) rotate(5deg); /*putin marit si rotire usoara*/
+  animation: rotatePulse 4s linear infinite; /*rotesc si pulse @.@ */
 }
 
-/*definit animatia pulse*/
+@keyframes rotate {
+  from {
+    transform: (0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-@keyframes pulse {
+@keyframes rotatePulse {
   0% {
-    transform: scale(1); /*dimensiune normala la inceput*/
+    transform: scale(1) rotate(0deg); /*dimensiune normala la inceput*/
   }
   50% {
-    transform: scale(1.05); /*mai mare ma mijloc*/
+    transform: scale(1.1) rotate(180deg); /*mai mare ma mijloc*/
   }
   100% {
-    transform: scale(1); /*back to normal*/
+    transform: scale(1) rotate(360deg); /*back to normal*/
   }
 }
 
@@ -51,4 +59,78 @@ body {
 
 #toggle-sound:hover {
   background-color: rgba(0, 255, 255, 0.664);
+}
+
+#shop {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px), 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: rgba(230, 164, 164, 0.644);
+  border-radius: 12px;
+  box-shadow: 0 8px 8px rgba(253, 8, 8, 0.2);
+  overflow: hidden;
+  z-index: 1;
+}
+
+#shop::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(270deg, #f06, #f90, #6f6, #09f, #f06);
+  animation: waveBorder 4s ease infinite;
+  z-index: -1;
+  border-radius: 18px;
+  filter: blur(10px);
+}
+
+@keyframes waveBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.upgrade {
+  position: relative;
+  background-color: rgba(105, 54, 105, 0.712);
+  border: 3px solid #561a63;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.upgrade::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px dashed #4caf50;
+  border-radius: rotateBorder 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
