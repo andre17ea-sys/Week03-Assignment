@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("media/bgd-cookies.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+#cookie {
+  display: block;
+  margin: 30px auto;
+  height: 250px;
+  cursor: pointer;
+  animation: pulse 2s infinite; /*de rulat mereu pulse*/
+}
+
+#cookie:hover {
+  transform: scale(1.1) rotate(5deg); /*putin marit si rotire usoara*/
+}
+
+/*definit animatia pulse*/
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /*dimensiune normala la inceput*/
+  }
+  50% {
+    transform: scale(1.05); /*mai mare ma mijloc*/
+  }
+  100% {
+    transform: scale(1); /*back to normal*/
+  }
+}
+
+#menu {
+  text-align: center;
+  margin: 10px auto 30px;
+  width: 100%;
+}
+
+#toggle-sound {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #5caa7c;
+  cursor: pointer;
+}
+
+#toggle-sound:hover {
+  background-color: rgba(0, 255, 255, 0.664);
+}

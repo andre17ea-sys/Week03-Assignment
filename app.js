@@ -30,9 +30,29 @@ function updateDisplay() {
   localStorage.setItem("cps", cps);
 }
 
+const clickSound = new Audio("media/boiling-w.mp3");
+const toggleSoundButton = document.getElementById("toggle-sound");
+let soundOn = true;
+
+function updateSoundButton() {
+  if (soundOn) {
+    toggleSoundButton.textContent = "🔊 On ";
+  } else {
+    toggleSoundButton.textContent = "🔇 Off";
+  }
+}
+updateSoundButton();
+toggleSoundButton.addEventListener("click", () => {
+  soundOn = !soundOn; //inversez true - false
+  updateSoundButton();
+});
+
 // click pt a creste c.count
 
 cookieImage.addEventListener("click", () => {
+  if (soundOn) {
+    clickSound.play();
+  }
   cookieCount += 1;
   updateDisplay();
 });
