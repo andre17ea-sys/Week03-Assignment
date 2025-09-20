@@ -5,40 +5,41 @@ body {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: Georgia;
+  font-size: large;
 }
 
 #cookie {
   display: block;
-  margin: 30px auto;
-  height: 250px;
+  margin: 60px auto;
+  height: 330px;
   cursor: pointer;
-  animation: rotate 4s linear infinite; /*de rotesc mereu si setez mai jos sa Pulse doar la click*/
-  transition: transform 0.3s ease;
+  animation: rotate 4s linear infinite; /*de rotit mereu si setez mai jos sa Pulse doar la click*/
+  transition: transform 0.1s ease;
 }
 
 #cookie:hover {
-  animation: rotatePulse 4s linear infinite; /*rotesc si pulse @.@ */
+  animation: Pulse 3s linear infinite; /*doar pulse @.@ */
 }
 
 @keyframes rotate {
   from {
-    transform: (0deg);
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes rotatePulse {
+@keyframes Pulse {
   0% {
-    transform: scale(1) rotate(0deg); /*dimensiune normala la inceput*/
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.1) rotate(180deg); /*mai mare ma mijloc*/
+    transform: scale(1.5);
   }
   100% {
-    transform: scale(1) rotate(360deg); /*back to normal*/
+    transform: scale(1);
   }
 }
 
@@ -58,20 +59,19 @@ body {
 }
 
 #toggle-sound:hover {
-  background-color: rgba(0, 255, 255, 0.664);
+  background-color: rgba(228, 211, 165, 0.664);
 }
 
 #shop {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px), 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  padding: 80px;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 60px auto;
   background-color: rgba(230, 164, 164, 0.644);
   border-radius: 12px;
-  box-shadow: 0 8px 8px rgba(253, 8, 8, 0.2);
   overflow: hidden;
   z-index: 1;
 }
@@ -83,11 +83,19 @@ body {
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(270deg, #f06, #f90, #6f6, #09f, #f06);
+  background: linear-gradient(
+    270deg,
+    rgba(138, 102, 36, 0.555),
+    rgba(255, 153, 0, 0.233),
+    rgba(37, 173, 37, 0.39),
+    rgba(90, 117, 134, 0.342),
+    rgba(75, 29, 47, 0.664)
+  );
+  background-size: 1000% 100%;
   animation: waveBorder 4s ease infinite;
   z-index: -1;
   border-radius: 18px;
-  filter: blur(10px);
+  filter: blur(164px);
 }
 
 @keyframes waveBorder {
@@ -104,11 +112,11 @@ body {
 
 .upgrade {
   position: relative;
-  background-color: rgba(105, 54, 105, 0.712);
-  border: 3px solid #561a63;
+  background-color: rgba(83, 92, 95, 0.712);
+  border: 3px solid #03502c;
   border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  box-shadow: 0 6px 8px rgba(131, 221, 150, 0.966);
   text-align: center;
   overflow: hidden;
   z-index: 1;
@@ -121,8 +129,8 @@ body {
   left: -5px;
   right: -5px;
   bottom: -5px;
-  border: 3px dashed #4caf50;
-  border-radius: rotateBorder 6s linear infinite;
+  border: 4px dashed #4caf50;
+  animation: rotateBorder 6s linear infinite;
   z-index: -1;
 }
 
@@ -133,4 +141,28 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.upgrade button {
+  background-color: #1d641e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(131, 221, 150, 0.966);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upgrade button:hover {
+  background-color: #0f7915;
+  transform: scale(1.05);
+}
+
+.upgrade button:active {
+  background-color: #158d1b;
+  transform: scale(0.95);
+  box-shadow: 0 6px 8px rgba(131, 221, 150, 0.966);
 }
