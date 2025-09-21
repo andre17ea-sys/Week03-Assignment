@@ -1,17 +1,66 @@
 body {
   margin: 0;
-  padding: 0;
-  background-image: url("media/bgd-cookies.jpg");
+  padding: 20px;
+  border: 40px solid #581313;
+  background-image: url("media/bossbaby.jpeg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   font-family: Georgia;
   font-size: large;
+  color: rgb(239, 241, 71);
+}
+
+#top-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 230px;
+  margin-top: 20px;
+  padding-top: 80px;
+  flex-wrap: wrap;
+}
+
+.side-cookie img {
+  height: 420px;
+  animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.center-cookie {
+  text-align: center;
+}
+
+.lets-cook {
+  font-size: 86px;
+  font-weight: bold;
+  padding: 1px 0 0;
+  color: rgb(34, 20, 83);
+  margin-bottom: 1px;
+  text-shadow: 2px 2px 6px #f84b9c;
+}
+
+.shop-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: rgb(34, 20, 83);
+  text-shadow: 2px 2px 6px #f84b9c;
+  margin-top: 40px;
 }
 
 #cookie {
   display: block;
-  margin: 60px auto;
+  margin: 10px auto;
   height: 330px;
   cursor: pointer;
   animation: rotate 4s linear infinite; /*de rotit mereu si setez mai jos sa Pulse doar la click*/
@@ -51,25 +100,27 @@ body {
 
 #toggle-sound {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 8px;
   border: none;
-  background-color: #5caa7c;
+  background-color: #1d641e;
+  box-shadow: 1px 1px 6px 8px rgba(131, 221, 150, 0.966);
   cursor: pointer;
+  color: white;
 }
 
 #toggle-sound:hover {
-  background-color: rgba(228, 211, 165, 0.664);
+  background-color: rgba(20, 201, 233, 0.534);
 }
 
 #shop {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 80px;
-  padding: 80px;
-  max-width: 1200px;
-  margin: 60px auto;
+  gap: 60px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: 100px auto;
   background-color: rgba(230, 164, 164, 0.644);
   border-radius: 12px;
   overflow: hidden;
@@ -85,17 +136,17 @@ body {
   bottom: -3px;
   background: linear-gradient(
     270deg,
-    rgba(138, 102, 36, 0.555),
-    rgba(255, 153, 0, 0.233),
+    rgba(55, 252, 29, 0.521),
+    rgba(255, 153, 0, 0.582),
     rgba(37, 173, 37, 0.39),
-    rgba(90, 117, 134, 0.342),
-    rgba(75, 29, 47, 0.664)
+    rgba(90, 117, 134, 0.541),
+    rgba(204, 37, 101, 0.521)
   );
   background-size: 1000% 100%;
   animation: waveBorder 4s ease infinite;
   z-index: -1;
   border-radius: 18px;
-  filter: blur(164px);
+  opacity: 1;
 }
 
 @keyframes waveBorder {
@@ -165,4 +216,37 @@ body {
   background-color: #158d1b;
   transform: scale(0.95);
   box-shadow: 0 6px 8px rgba(131, 221, 150, 0.966);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 190px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+  color: rgb(47, 219, 196);
+  font-size: 24px;
+  background-color: rgba(104, 34, 34, 0.452);
+  border-top: 4px solid rgba(109, 21, 21, 0.959);
+  border-radius: 10%;
+}
+
+.footer-img {
+  height: 80px;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  gap: 480px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #350841;
+  text-shadow: 2px 2px 6px #f7e224;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1px 1px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(49, 250, 110, 0.384);
 }
